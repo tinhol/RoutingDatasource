@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="org.tinhol.rds.web.datasource_settings.DataSourceSettingsEdit"
+        datasource="dataSourceSettingsDs"
+        focusComponent="fieldGroup"
+        messagesPack="org.tinhol.rds.web.datasource_settings">
+    <dsContext>
+        <datasource id="dataSourceSettingsDs"
+                    class="org.tinhol.rds.entity.DataSourceSettings"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="dataSourceSettingsDs">
+            <column width="250px">
+                <field property="name"/>
+                <field property="driverClass"/>
+                <field property="url"/>
+                <field property="username"/>
+                <field property="password"/>
+                <field property="weight"/>
+                <field property="active"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

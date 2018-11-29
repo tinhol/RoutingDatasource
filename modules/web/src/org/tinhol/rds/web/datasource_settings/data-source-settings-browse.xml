@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="org.tinhol.rds.web.datasource_settings.DataSourceSettingsBrowse"
+        focusComponent="dataSourceSettingsesTable"
+        lookupComponent="dataSourceSettingsesTable"
+        messagesPack="org.tinhol.rds.web.datasource_settings">
+    <dsContext>
+        <groupDatasource id="dataSourceSettingsesDs"
+                         class="org.tinhol.rds.entity.DataSourceSettings"
+                         view="_local">
+            <query>
+                <![CDATA[select e from rds$DataSourceSettings e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="dataSourceSettingsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="dataSourceSettingsesTable"
+                datasource="dataSourceSettingsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="dataSourceSettingsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="driverClass"/>
+                <column id="url"/>
+                <column id="username"/>
+                <column id="password"/>
+                <column id="weight"/>
+                <column id="active"/>
+            </columns>
+            <rows datasource="dataSourceSettingsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="dataSourceSettingsesTable.create"/>
+                <button id="editBtn"
+                        action="dataSourceSettingsesTable.edit"/>
+                <button id="removeBtn"
+                        action="dataSourceSettingsesTable.remove"/>
+                <button id="reloadDataSources"
+                        caption="msg://caption.reloadDataSources"
+                        invoke="reloadDataSources"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>
