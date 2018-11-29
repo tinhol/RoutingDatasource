@@ -1,5 +1,5 @@
 rootProject.name = 'routing-datasource'
-def modulePrefix = 'app'
+def modulePrefix = 'routing-datasource'
 include(":${modulePrefix}-global", ":${modulePrefix}-core", ":${modulePrefix}-web")
 project(":${modulePrefix}-global").projectDir = new File(settingsDir, 'modules/global')
 project(":${modulePrefix}-core").projectDir = new File(settingsDir, 'modules/core')
